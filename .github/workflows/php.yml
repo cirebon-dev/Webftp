@@ -2,9 +2,9 @@ name: build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -16,6 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Run Syntax Checker
+      run: find . -type f -name '*.php' -print -exec php -l {} \;
 
     - name: Install dependencies
       run: composer update --lock
