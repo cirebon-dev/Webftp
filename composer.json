@@ -1,0 +1,10 @@
+{
+   "require-dev":{
+      "phpcompatibility/php-compatibility":"*",
+      "phpstan/phpstan": "^1.10"
+   },
+   "scripts":{
+      "post-install-cmd":"\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+      "post-update-cmd":"\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+   }
+}
